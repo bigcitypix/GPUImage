@@ -298,6 +298,27 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
 //    if (conn.supportsVideoMaxFrameDuration)
 //        conn.videoMaxFrameDuration = CMTimeMake(1,60);
     
+    
+    //add audio inputs by default
+    
+    _microphone = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio];
+    audioInput = [AVCaptureDeviceInput deviceInputWithDevice:_microphone error:nil];
+    if ([_captureSession canAddInput:audioInput])
+    {
+        [_captureSession addInput:audioInput];
+    }
+    audioOutput = [[AVCaptureAudioDataOutput alloc] init];
+    
+    if ([_captureSession canAddOutput:audioOutput])
+    {
+        [_captureSession addOutput:audioOutput];
+    }
+    else
+    {
+        NSLog(@"Couldn't add audio output");
+    }
+    [audioOutput setSampleBufferDelegate:self queue:audioProcessingQueue];
+    
     [_captureSession commitConfiguration];
     
 	return self;
@@ -973,14 +994,16 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
 
 - (void)setAudioEncodingTarget:(GPUImageMovieWriter *)newValue;
 {
+    /* take out - in favor of adding audio on init
+     
+     
     if (newValue) {
-        /* Add audio inputs and outputs, if necessary */
         addedAudioInputsDueToEncodingTarget |= [self addAudioInputsAndOutputs];
     } else if (addedAudioInputsDueToEncodingTarget) {
-        /* Remove audio inputs and outputs, if they were added by previously setting the audio encoding target */
         [self removeAudioInputsAndOutputs];
         addedAudioInputsDueToEncodingTarget = NO;
     }
+     */
     
     [super setAudioEncodingTarget:newValue];
 }
