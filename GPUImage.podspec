@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name     = 'GPUImage'
-  s.version  = '0.1.6'
+  s.version  = '0.1.7'
   s.license  = 'BSD'
-  s.summary  = 'Fork of the originak GPUImage repo for custom implementation'
+  s.summary  = 'Fork of the original GPUImage repo for custom implementation'
   s.homepage = 'https://github.com/zakinaeem/GPUImage'
   s.author   = { 'Zaki Naeem' => 'zakinaeem@gmail.com' }
   s.source   = { :git => 'https://github.com/zakinaeem/GPUImage.git', :tag => "#{s.version}" }

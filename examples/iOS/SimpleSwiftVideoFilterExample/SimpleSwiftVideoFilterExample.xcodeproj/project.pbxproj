@@ -30,13 +30,6 @@
 			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
 			remoteInfo = GPUImage;
 		};
-		BC73FD5119612C75004A9191 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BC73FD4419612C4E004A9191 /* GPUImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BCF1A34414DDB1EC00852800;
-			remoteInfo = GPUImageTests;
-		};
 		BC73FD5319612C75004A9191 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BC73FD4419612C4E004A9191 /* GPUImage.xcodeproj */;
@@ -122,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				BC73FD5019612C75004A9191 /* libGPUImage.a */,
-				BC73FD5219612C75004A9191 /* GPUImageTests.octest */,
 				BC73FD5419612C75004A9191 /* GPUImage.framework */,
 			);
 			name = Products;
@@ -194,13 +186,6 @@
 			fileType = archive.ar;
 			path = libGPUImage.a;
 			remoteRef = BC73FD4F19612C75004A9191 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BC73FD5219612C75004A9191 /* GPUImageTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GPUImageTests.octest;
-			remoteRef = BC73FD5119612C75004A9191 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		BC73FD5419612C75004A9191 /* GPUImage.framework */ = {
@@ -376,6 +361,7 @@
 				BC73FD3C19612C19004A9191 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
