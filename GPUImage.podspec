@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'GPUImage'
-  s.version  = '0.1.8'
+  s.version  = '0.1.9'
   s.license  = 'BSD'
   s.summary  = 'Fork of the original GPUImage repo for custom implementation'
   s.homepage = 'https://github.com/zakinaeem/GPUImage'
