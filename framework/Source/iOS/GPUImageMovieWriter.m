@@ -79,6 +79,7 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
 		return nil;
     }
 
+    _isRenderingFile = NO;
     _shouldInvalidateAudioSampleWhenDone = NO;
     
     self.enabled = YES;
@@ -266,11 +267,11 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
 }
 
 -(void)prepareForFileRender{
-    allowWriteAudio = YES;
+    _isRenderingFile = YES;
 }
 - (void)startRecording;
 {
-    allowWriteAudio = NO;
+    allowWriteAudio = _isRenderingFile;
     alreadyFinishedRecording = NO;
     startTime = kCMTimeInvalid;
     runSynchronouslyOnContextQueue(_movieWriterContext, ^{
