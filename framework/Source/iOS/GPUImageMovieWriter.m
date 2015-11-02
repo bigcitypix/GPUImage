@@ -265,6 +265,9 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
     }
 }
 
+-(void)prepareForFileRender{
+    allowWriteAudio = YES;
+}
 - (void)startRecording;
 {
     allowWriteAudio = NO;
